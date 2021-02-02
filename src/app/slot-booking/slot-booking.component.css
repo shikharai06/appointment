@@ -1,0 +1,28 @@
+.vertical-center {
+    margin-left:30% ;
+    position: absolute;
+    border: 5px solid transparent;
+    box-shadow: 5px 10px 5px 10px;
+    width: 50%;
+  }
+  input{
+      background-color: transparent;
+      border:3px solid gray;
+  }
+  .box1{
+    border: 10px solid magenta;
+    background-color:rgb(173, 241, 47);
+    width:25%;
+    height:25%;
+    float: left;
+    margin:1% 1% 1% 1%;
+  }
+  .box2{
+    border: 10px solid rgb(22, 224, 22) ;
+    background-color: rgb(173, 241, 47);
+    width:25%;
+    height:25%;
+    float: left;
+    margin:1% 1% 1% 1%;
+    cursor: pointer;
+  }

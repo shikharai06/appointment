@@ -1,0 +1,28 @@
+<div class="vertical-center">
+    <div class="container">
+        <table class="table table-stripped">
+                <tr>
+                    <th>Doctor</th>
+                    <th>specialization</th>
+                    <th>Address</th>
+                    <th>Hospital Name</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+                <tr *ngIf="appointment;else elseBlock">
+                    <td>{{appointment.doctor.name}}</td>
+                    <td>{{appointment.doctor.specialization}}</td>
+                    <td>{{appointment.doctor.address}}</td>
+                    <td>{{appointment.doctor.hospitalName}}</td>
+                    <td>{{appointment.date}}</td>
+                    <td>{{appointment.time}}</td>
+                    <td>
+                        <nav>
+                            <button type="button" class="btn btn-success" (click)="cancelAppointment(appointment.appointmentId)">Cancel Appointment</button>
+                        </nav>
+                    </td>
+                </tr>
+        </table>
+        <ng-template #elseBlock>No Appointment Scheduled</ng-template>
+        <a routerLink="/doctorList" routerLinkActive="active">Schedule New Appointment</a>
+    </div>

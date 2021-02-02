@@ -1,0 +1,37 @@
+<div class="vertical-center">
+    <select id="selectIdS" class="form-control-mb-12 btn btn-primary dropdown-toggle" (change)="getDoctorsBySpecialization($event.target.value)">
+        <option>Select specialization</option>
+        <option *ngFor="let specialization of specializations" [value]="specialization">{{specialization}}</option>
+    </select>&nbsp;&nbsp;
+    <select id="selectIdHN" class="form-control-mb-12 btn btn-primary dropdown-toggle" (change)="getDoctorsByHospitalName($event.target.value)">
+        <option>Select hospital name</option>
+        <option *ngFor="let hospitalName of hospitalNames" [value]="hospitalName">{{hospitalName}}</option>
+    </select>
+<div class="container">
+    <table class="table table-stripped">
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Qualification</th>
+                <th>Specialization</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Hospital Name</th>
+                <th></th>
+            </tr>
+            <tr *ngFor="let doctors of doctorsList">
+                <td>DR.{{doctors.name}}</td>
+                <td>{{doctors.gender}}</td>
+                <td>{{doctors.qualification}}</td>
+                <td>{{doctors.specialization}}</td>
+                <td>{{doctors.phoneNumber}}</td>
+                <td>{{doctors.emailId}}</td>
+                <td>{{doctors.hospitalName}}</td>
+                <td>
+                    <nav>
+                        <button type="button" class="btn btn-success" [routerLink]="['/slotBooking']"[queryParams]="{doctorId:doctors.doctorId}" routerLinkActive="active">Schedule Appointment</button>
+                    </nav>
+                </td>
+            </tr>
+    </table>
+</div>

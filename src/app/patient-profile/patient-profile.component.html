@@ -1,0 +1,12 @@
+<div class="vetical-container">
+    <ul class="list-group">
+        <li class="list-group-item">Name:{{patient.name}}</li>
+        <li class="list-group-item">Gender:{{patient.gender}}</li>
+        <li class="list-group-item">Address:{{patient.address}}</li>
+        <li class="list-group-item">Phone Number:{{patient.phoneNumber}}</li>
+        <li class="list-group-item">Email Id:{{patient.emailId}}</li>
+    </ul>
+    <nav>
+        <button class="btn btn-primary" [routerLink]="['/updatePatientDetails']">Update Details</button>
+    </nav>
+    <a (click)="deletePatientAccount()">Delete Account</a>

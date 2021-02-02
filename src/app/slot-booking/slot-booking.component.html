@@ -1,0 +1,22 @@
+<div class="vertical-center">
+<form #SlotBookingForm="ngForm">
+        <small class="text-danger">{{message}}</small>
+        <div class="form-group">
+            <label for="date">Date:</label>
+            <input type="date" min="{{currentDate | date:'yyyy-MM-dd'}}" class="form-control" id="date" name="date" (change)="getAppointmentsByDateAndDoctor(date);" [(ngModel)]="date"  required
+           
+            >
+            <!-- [class.is-invalid]="date.invalid && date.touched" <small class="text-danger" [class.d-none]="date.valid || date.untouched">Date is required field</small> -->
+        </div>
+        <div class="box1" *ngFor="let appointment of appointments">
+            <p class="dut-text dut-title">
+                Time:{{appointment.time}}
+                Slot Booked
+            </p>
+        </div>
+        <div class="box2" *ngFor="let time of times" (click)="createAppointment(time.toString()+':00:00')">
+            <p class="dut-text dut-title">
+                Book Slot for time {{time}}:00:00
+            </p>
+        </div>
+    </form>

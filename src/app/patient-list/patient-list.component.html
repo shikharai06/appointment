@@ -1,0 +1,26 @@
+<div class="vertical-center">
+<div class="container">
+    <table class="table table-stripped">
+            <tr>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+            <tr *ngFor="let appointment of appointedPatientsList">
+                <td>{{appointment.patApt.name}}</td>
+                <td>{{appointment.patApt.gender}}</td>
+                <td>{{appointment.patApt.address}}</td>
+                <td>{{appointment.patApt.phoneNumber}}</td>
+                <td>{{appointment.patApt.emailId}}</td>
+                <td>{{appointment.date}}</td>
+                <td>{{appointment.time}}</td>
+                <td>
+                        <button type="button" class="btn btn-success" (click)="cancelAppointment(appointment.appointmentId)">Cancel Appointment</button>
+                </td>
+            </tr>
+    </table>
+</div>
